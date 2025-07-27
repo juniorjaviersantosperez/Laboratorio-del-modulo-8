@@ -1,0 +1,20 @@
+# Descargar la imagen oficial de Portainer desde Docker Hub
+sudo docker pull portainer/portainer-ce:latest
+
+# Verificar que la imagen fue descargada correctamente
+sudo docker images
+
+# Crear y ejecutar el contenedor de Portainer
+sudo docker run -d \
+  --name portainer \
+  -p 9443:9443 \
+  -p 9000:9000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  portainer/portainer-ce:latest
+
+# Listar los contenedores en ejecución para confirmar que Portainer está activo
+sudo docker ps
+
+# Limpiar pantalla
+clear
