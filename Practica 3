@@ -1,0 +1,23 @@
+# Instalación y despliegue de contenedores para WordPress usando Docker Compose
+
+# Instalar docker-compose
+sudo apt install docker-compose -y
+
+# Verificar la versión de Docker instalada
+sudo docker --version
+
+# Limpiar la pantalla para mejor visualización
+clear
+
+# Crear un directorio para el proyecto WordPress con Docker
+sudo mkdir wordpress-docker
+
+# Entrar al directorio creado
+cd wordpress-docker
+
+# Crear el archivo docker-compose.yml con la configuración necesaria
+sudo nano docker-compose.yml
+
+# Levantar los contenedores en segundo plano con Docker Compose
+sudo docker compose up -d
+
