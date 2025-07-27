@@ -1,0 +1,30 @@
+# Instalar Docker y componentes necesarios
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+# Habilitar Docker para que inicie automáticamente
+sudo systemctl enable docker
+
+# Iniciar el servicio Docker
+sudo systemctl start docker
+
+# Verificar estado del servicio Docker
+sudo systemctl status docker
+
+# Limpiar pantalla
+clear
+
+# Crear directorio local para contenido web
+sudo mkdir -p /home/website/
+
+# Ejecutar contenedor Nginx con volumen y puerto mapeado
+sudo docker run -d --name mi_nginx -p 8888:80 -v /home/website:/usr/share/nginx/html nginx
+
+# (Opcional) Ver imágenes descargadas
+sudo docker images
+
+# Limpiar pantalla
+clear
+
+# Editar o crear el archivo index.html en la carpeta local
+sudo nano /home/website/index.html
+
